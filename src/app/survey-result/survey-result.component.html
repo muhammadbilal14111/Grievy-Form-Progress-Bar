@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Your Rankings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-list *ngIf="!isLoading">
+  <ion-item *ngFor="let item of receivedData">
+    <ion-label>{{ item.key }}</ion-label>
+    <p>{{ item.val }}</p>
+  </ion-item>
+</ion-list>
+
+<ion-spinner *ngIf="isLoading"></ion-spinner>
+<p *ngIf="isLoading">Loading data...</p>

@@ -25,3 +25,28 @@
 #container a {
   text-decoration: none;
 }
+
+#sliderContainer{
+  padding: 300px;
+}
+
+ion-range {
+  --bar-background: #8e9092;
+  --bar-background-active: #06541b;
+  --bar-height: 5px;
+  --bar-border-radius: 8px;
+  --knob-background: #ffffff;
+  --knob-size: 30px;
+  --pin-background: #ffafcc;
+  --pin-color: #fff;
+}
+
+p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: xx-large;
+  text-align: center;
+}
+
+ion-icon {
+  color: red;
+}

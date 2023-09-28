@@ -1,8 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title> Grievy Survey </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -12,9 +10,29 @@
       <ion-title size="large">Blank</ion-title>
     </ion-toolbar>
   </ion-header>
+  <div id="progressContainer">
+    <ion-progress-bar [value]="progress"></ion-progress-bar>
+  </div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div id="sliderContainer">
+    <p *ngIf="showComponent === 'component1'">How much do you like pizza?</p>
+
+    <app-survey2-comp *ngIf="showComponent === 'component2'"></app-survey2-comp>
+    <app-survey3-comp *ngIf="showComponent === 'component3'"></app-survey3-comp>
+    <app-survey4-comp *ngIf="showComponent === 'component4'"></app-survey4-comp>
+    <ion-range
+      *ngIf="showComponent !== 'resultComponent'"
+      min="0"
+      max="10"
+      (ionChange)="onIonChange($event)"
+      labelPlacement="stacked"
+    >
+      <ion-icon slot="start" size="large" name="thumbs-down"></ion-icon>
+      <ion-icon slot="end" size="large" name="heart"></ion-icon>
+    </ion-range>
+
+    <app-survey-result
+      *ngIf="showComponent === 'resultComponent'"
+    ></app-survey-result>
   </div>
 </ion-content>
