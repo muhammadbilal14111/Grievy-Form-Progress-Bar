@@ -1,0 +1,7 @@
+{
+  "name": "grievy-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
